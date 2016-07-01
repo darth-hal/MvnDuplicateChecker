@@ -1,0 +1,26 @@
+plugins {
+    //https://github.com/danthegoodman/gradle-capsule-plugin
+    id "us.kirchmeier.capsule" version "1.0.2"
+}
+
+group 'jp.mydns.sekky.tools'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = "MvnDuplicateFileChecker"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+    compile group: 'commons-cli', name: 'commons-cli', version: '1.2'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+task fatCapsule(type: FatCapsule) {
+    applicationClass mainClassName
+}
