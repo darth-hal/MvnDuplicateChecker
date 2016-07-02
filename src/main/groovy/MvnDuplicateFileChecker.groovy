@@ -2,6 +2,7 @@
 
 import groovy.io.FileType
 // groovy実行環境にはあるが、groovy-all.jarにはない
+// コンパイルしてからJavaコマンドで実行する場合はcommons.cliが必要
 import org.apache.commons.cli.Option
 
 // optionalArgsはargsが1以上の場合にオプションの引数が省略ができるか
