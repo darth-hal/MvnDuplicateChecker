@@ -35,11 +35,7 @@ def log = { text ->
 
 log "tsvMode: $tsvMode"
 
-
 def pom = options.f
-if (!pom) {
-    pom = "pom.xml"
-}
 log "pom: $pom"
 
 def includeScope = options.is
@@ -50,9 +46,6 @@ log "includeScope: $includeScope"
 
 def skipMaven = options.s;
 log "skipMaven: $skipMaven"
-
-
-
 
 if (!skipMaven) {
     def mvn = "mvn -f $pom clean dependency:unpack-dependencies -Dmdep.useSubDirectoryPerArtifact=true -Dmdep.useSubDirectoryPerScope=true".execute()
